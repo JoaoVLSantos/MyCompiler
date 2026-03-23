@@ -1,0 +1,4 @@
+br\edu\ufape\parser\ExpressionParser$1.class
+br\edu\ufape\parser\StatementParser$1.class
+br\edu\ufape\semantic\SemanticAnalyzer$1.class
+br\edu\ufape\parser\DeclarationParser$1.class

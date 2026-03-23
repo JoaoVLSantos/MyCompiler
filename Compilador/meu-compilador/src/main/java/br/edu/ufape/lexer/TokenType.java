@@ -1,0 +1,52 @@
+package br.edu.ufape.lexer;
+
+public enum TokenType {
+
+    TOKEN_EOF,
+    TOKEN_INVALID,
+
+    TOKEN_ID,
+    TOKEN_INT_LITERAL,
+    TOKEN_FLOAT_LITERAL,
+    TOKEN_CHAR_LITERAL,
+
+    TOKEN_INTEGER,
+    TOKEN_FLOAT,
+    TOKEN_BOOLEAN,
+    TOKEN_CHAR,
+    TOKEN_VOID,
+
+    TOKEN_PROC,
+    TOKEN_FUNC,
+    TOKEN_RETURN,
+    TOKEN_IF,
+    TOKEN_ELSE,
+    TOKEN_WHILE,
+    TOKEN_BREAK,
+    TOKEN_CONTINUE,
+    TOKEN_PRINT,
+    TOKEN_TRUE,
+    TOKEN_FALSE,
+
+    TOKEN_PLUS,
+    TOKEN_MINUS,
+    TOKEN_MUL,
+    TOKEN_DIV,
+    TOKEN_MOD,
+    TOKEN_ASSIGN,
+    TOKEN_AND,
+    TOKEN_OR,
+    TOKEN_EQ,
+    TOKEN_NEQ,
+    TOKEN_GT,
+    TOKEN_GTE,
+    TOKEN_LT,
+    TOKEN_LTE,
+
+    TOKEN_LPAREN,
+    TOKEN_RPAREN,
+    TOKEN_LBRACE,
+    TOKEN_RBRACE,
+    TOKEN_SEMI,
+    TOKEN_COMMA
+}

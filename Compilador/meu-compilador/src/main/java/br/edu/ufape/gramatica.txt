@@ -1,0 +1,120 @@
+<programa> ::= <decls> <rotinas> <bloco>
+
+
+<decls> ::= <decl> <decls> | ε
+
+<decl> ::= <tipo> <lista_id> ;
+
+<tipo> ::= integer
+         | float
+         | boolean
+         | char
+
+<lista_id> ::= id <lista_id’>
+
+<lista_id’> ::= , id <lista_id’> | ε
+
+
+<rotinas> ::= <rotina> <rotinas> | ε
+
+<rotina> ::= <proc_decl>
+           | <func_decl>
+
+<proc_decl> ::= proc id ( <params_opt> ) <bloco>
+
+<func_decl> ::= func <tipo_retorno> id ( <params_opt> ) <bloco>
+
+<tipo_retorno> ::= <tipo> | void
+
+
+<params_opt> ::= <params> | ε
+
+<params> ::= <tipo> id <params’>
+
+<params’> ::= , <tipo> id <params’> | ε
+
+
+<bloco> ::= { <cmds> }
+
+<cmds> ::= <cmd> <cmds> | ε
+
+<cmd> ::= <cmd_atr>
+        | <cmd_if>
+        | <cmd_while>
+        | <cmd_chamada> ;
+        | <cmd_return> ;
+        | break ;
+        | continue ;
+        | <cmd_print> ;
+
+
+<cmd_atr> ::= id = <expr> ;
+
+
+<cmd_chamada> ::= id ( <args_opt> )
+
+<args_opt> ::= <args> | ε
+
+<args> ::= <expr> <args’>
+
+<args’> ::= , <expr> <args’> | ε
+
+
+<cmd_if> ::= if ( <expr_bool> ) <bloco> <else_opt>
+
+<else_opt> ::= else <bloco> | ε
+
+
+<cmd_while> ::= while ( <expr_bool> ) <bloco>
+
+
+<cmd_return> ::= return <expr_opt>
+
+<expr_opt> ::= <expr> | ε
+
+
+<cmd_print> ::= print ( <print_arg> )
+
+<print_arg> ::= id
+              | int_lit
+              | float_lit
+              | char_lit
+              | true
+              | false
+
+
+<expr> ::= <termo> <expr’>
+
+<expr’> ::= + <termo> <expr’>
+          | - <termo> <expr’>
+          | ε
+
+
+<termo> ::= <fator> <termo’>
+
+<termo’> ::= * <fator> <termo’>
+           | / <fator> <termo’>
+           | ε
+
+
+<fator> ::= int_lit
+          | float_lit
+          | char_lit
+          | true
+          | false
+          | id <fator’>
+          | ( <expr> )
+
+
+<fator’> ::= ( <args_opt> ) | ε
+
+
+<expr_bool> ::= <expr> <op_rel> <expr>
+
+
+<op_rel> ::= ==
+           | !=
+           | >
+           | >=
+           | <
+           | <=

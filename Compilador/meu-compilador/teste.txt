@@ -1,0 +1,50 @@
+int a, b;
+float x;
+bool flag;
+char c;
+
+func int soma(int v1, int v2) {
+    int result;
+
+    result = v1+v2;
+
+    return result;
+}
+
+proc mostra(int valor) {
+    print(valor);
+}
+
+{
+    a = 10;
+    b = soma(a, 5);
+
+    if (a > b) {
+        print(a);
+    } else {
+        print(b);
+    }
+
+    x = 3.5;
+    c = 'z';
+    flag = true;
+
+    while (a > 0) {
+
+        print(a);
+
+        if (a == 5) {
+            break;
+        }
+
+        a = a - 1;
+        continue;
+    }
+
+    mostra(b);
+}
+
+/*  cd .\meu-compilador\
+    mvn compile
+    mvn exec:java "-Dexec.args=teste.txt"
+*/
